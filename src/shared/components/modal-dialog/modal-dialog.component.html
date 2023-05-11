@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Add Product Form</h1>
+<form [formGroup]="productForm">
+  <div mat-dialog-content>
+    <input
+      matInput
+      placeholder="Product Name"
+      formControlName="name"
+      matInput
+      value=""
+    />
+    <input matInput placeholder="Product Category" formControlName="category" />
+  </div>
+</form>
+<div mat-dialog-action [align]="'end'">
+  <button (click)="closeDialog()">Close</button>
+  <button style="margin-left: 8px" (click)="save()">Save</button>
+</div>
