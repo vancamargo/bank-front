@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [AppComponent, ModalDialogComponent],
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatNativeDateModule,
     MatDatepickerModule,
     HttpClientModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

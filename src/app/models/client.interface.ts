@@ -1,4 +1,4 @@
-export interface Cliente {
+export interface Client {
   name: string;
   category: string;
   cpf: string;
