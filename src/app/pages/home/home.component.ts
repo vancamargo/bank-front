@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
     'dateRegister',
     'birtDate',
     'monthlyIncome',
+    'email',
     'action',
   ];
   dataSource!: MatTableDataSource<any>;
@@ -38,9 +39,16 @@ export class HomeComponent implements OnInit {
   }
 
   openDialog() {
-    this.dialog.open(ModalDialogComponent, {
-      width: '70%',
-    });
+    this.dialog
+      .open(ModalDialogComponent, {
+        width: '70%',
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val === 'save') {
+          this.getAllClients();
+        }
+      });
   }
 
   getAllClients() {
@@ -58,10 +66,17 @@ export class HomeComponent implements OnInit {
   }
 
   editProdut(row: any) {
-    this.dialog.open(ModalDialogComponent, {
-      width: '70%',
-      data: row,
-    });
+    this.dialog
+      .open(ModalDialogComponent, {
+        width: '70%',
+        data: row,
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val === 'edit') {
+          this.getAllClients();
+        }
+      });
   }
 
   applyFilter(event: Event) {
@@ -71,5 +86,17 @@ export class HomeComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  deleteClient(id: number) {
+    this.clienteService.deleteClient(id).subscribe({
+      next: (res) => {
+        alert('delete Sucess');
+        this.getAllClients();
+      },
+      error: (err) => {
+        alert('error delete');
+      },
+    });
   }
 }

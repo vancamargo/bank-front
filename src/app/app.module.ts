@@ -5,11 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonPrimaryModule } from '../shared/components/button-primary/button-primary.module';
-import { HomeModule } from './pages/home/home.module';
 
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { NavbarComponent } from 'src/shared/components/navbar/navbar.component';
-import { DataTableComponent } from 'src/shared/components/data-table/data-table.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ModalDialogComponent } from 'src/shared/components/modal-dialog/modal-dialog.component';
@@ -19,6 +17,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [AppComponent, ModalDialogComponent],
@@ -37,8 +37,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDatepickerModule,
     HttpClientModule,
     MatPaginatorModule,
+    HomeModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
-  providers: [],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
