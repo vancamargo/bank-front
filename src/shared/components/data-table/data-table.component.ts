@@ -14,7 +14,7 @@ export class DataTableComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(ModalDialogComponent, {
-      height: '30%',
+      width: '70%',
     });
   }
 }

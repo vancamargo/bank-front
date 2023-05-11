@@ -1,17 +1,32 @@
 <h1 mat-dialog-title>Add Product Form</h1>
 <form [formGroup]="productForm">
   <div mat-dialog-content>
-    <input
-      matInput
-      placeholder="Product Name"
-      formControlName="name"
-      matInput
-      value=""
-    />
-    <input matInput placeholder="Product Category" formControlName="category" />
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="name" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>CPF</mat-label>
+      <input matInput placeholder="cpf" formControlName="cpf" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Data de Nascimento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birtDate" />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Renda Mensal</mat-label>
+      <input matInput placeholder="name" formControlName="monthlyIncome" />
+    </mat-form-field>
   </div>
 </form>
 <div mat-dialog-action [align]="'end'">
-  <button (click)="closeDialog()">Close</button>
-  <button style="margin-left: 8px" (click)="save()">Save</button>
+  <button-primary (click)="closeDialog()">Close</button-primary>
+  <button-primary style="margin-left: 8px" (click)="save()"
+    >Save</button-primary
+  >
 </div>

@@ -7,17 +7,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonPrimaryModule } from '../shared/components/button-primary/button-primary.module';
 import { HomeModule } from './pages/home/home.module';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from 'src/shared/components/navbar/navbar.component';
+import { DataTableComponent } from 'src/shared/components/data-table/data-table.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ModalDialogComponent } from 'src/shared/components/modal-dialog/modal-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ModalDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ButtonPrimaryModule,
-    HomeModule,
+    CommonModule,
     ReactiveFormsModule,
+    FormsModule,
+    ButtonPrimaryModule,
+    MatDialogModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

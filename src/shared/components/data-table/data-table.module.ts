@@ -19,6 +19,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     ButtonPrimaryModule,
     MatDialogModule,
   ],
-  exports: [DataTableComponent],
+  exports: [DataTableComponent, ButtonPrimaryModule],
 })
 export class DataTableModule {}
