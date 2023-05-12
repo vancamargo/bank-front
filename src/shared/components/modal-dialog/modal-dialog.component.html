@@ -1,7 +1,8 @@
 <mat-toolbar class="navbar" color="primary"> </mat-toolbar>
-<h1 mat-dialog-title>Add Product Form</h1>
-<form [formGroup]="clientForm">
-  <div mat-dialog-content>
+
+<h1 mat-dialog-title>{{ btnAction }} Cliente</h1>
+<div mat-dialog-content>
+  <form [formGroup]="clientForm">
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Nome</mat-label>
       <input matInput placeholder="name" formControlName="name" />
@@ -23,27 +24,38 @@
         [for]="picker"
       ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
-      <!-- <mat-error>Error</mat-error> -->
-      <mat-error *ngIf="clientForm.hasError('tooJung')"
+
+      <!-- <mat-error *ngIf="clientForm.hasError('tooJung')"
         >You are too jung!</mat-error
       >
       <mat-error *ngIf="clientForm.hasError('tooOld')"
         >You are too old!</mat-error
-      >
+      > -->
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Renda Mensal</mat-label>
-      <input matInput placeholder="name" formControlName="monthlyIncome" />
+      <input
+        matInput
+        placeholder="name"
+        formControlName="monthlyIncome"
+        mask="separator.2"
+        thousandSeparator=","
+      />
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>E-mail</mat-label>
       <input matInput placeholder="email" formControlName="email" />
     </mat-form-field>
-  </div>
-</form>
-<div mat-dialog-action [align]="'end'">
-  <button-primary (click)="closeDialog()">Fechar</button-primary>
-  <button-primary style="margin-left: 8px" (click)="save()">{{
-    btnAction
-  }}</button-primary>
+  </form>
+</div>
+<div class="modal-button" mat-dialog-actions [align]="'end'">
+  <button-primary class="button-close" (click)="closeDialog()"
+    >Fechar</button-primary
+  >
+  <button-primary
+    class="button-save"
+    (click)="save()"
+    [isDisabled]="!clientForm.valid"
+    >{{ btnAction }}</button-primary
+  >
 </div>

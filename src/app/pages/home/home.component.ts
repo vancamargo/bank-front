@@ -7,7 +7,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
-import { Client } from 'src/app/models/client.interface';
+import { Client } from 'src/shared/models/client.interface';
 
 @Component({
   selector: 'app-home',
@@ -43,10 +43,10 @@ export class HomeComponent implements OnInit {
   }
 
   openDialog() {
+    console.log('aqui');
     this.dialog
       .open(ModalDialogComponent, {
-        width: '336px',
-        height: '425px',
+        width: '40%',
       })
       .afterClosed()
       .subscribe((val) => {
@@ -73,8 +73,7 @@ export class HomeComponent implements OnInit {
   editProdut(row: any) {
     this.dialog
       .open(ModalDialogComponent, {
-        width: '336px',
-        height: '425px',
+        width: '40%',
         data: row,
       })
       .afterClosed()

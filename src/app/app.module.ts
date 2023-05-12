@@ -20,9 +20,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HomeModule } from './pages/home/home.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { IconSucessModule } from 'src/shared/components/svgs/icon-sucess/icon-sucess.module';
+import { ModalDialogSucessOrErrorComponent } from 'src/shared/components/modal-dialog-sucess-or-error/modal-dialog-sucess-or-error.component';
 
 @NgModule({
-  declarations: [AppComponent, ModalDialogComponent],
+  declarations: [
+    AppComponent,
+    ModalDialogComponent,
+    ModalDialogSucessOrErrorComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -42,6 +48,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     NgxMaskDirective,
     NgxMaskPipe,
     MatToolbarModule,
+    IconSucessModule,
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent],

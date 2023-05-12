@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchSgvModule } from 'src/shared/components/svgs/search-sgv/search-sgv.module';
+import { CPFPipe } from 'src/shared/pipes/cpf.pipe';
 
 @NgModule({
   imports: [
@@ -29,7 +30,7 @@ import { SearchSgvModule } from 'src/shared/components/svgs/search-sgv/search-sg
     MatButtonModule,
     SearchSgvModule,
   ],
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, CPFPipe],
   exports: [HomeComponent, MatTableModule, MatPaginatorModule, MatSortModule],
 })
 export class HomeModule {}

@@ -8,6 +8,7 @@ export declare type MatSizeButton = 'sm' | 'md' | 'lg' | 'full';
 })
 export class ButtonPrimaryComponent implements OnInit {
   @Input() size: MatSizeButton = 'sm';
+  @Input() isDisabled = false;
   constructor() {}
 
   ngOnInit() {}

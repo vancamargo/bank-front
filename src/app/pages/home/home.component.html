@@ -24,7 +24,7 @@
           [style.background-color]="color"
           [style.border-radius]="radiusInit"
         >
-          PLACA
+          Nome
         </th>
         <td mat-cell *matCellDef="let row">{{ row.name }}</td>
       </ng-container>
@@ -38,7 +38,7 @@
         >
           CPF
         </th>
-        <td mat-cell *matCellDef="let row">{{ row.cpf }}%</td>
+        <td mat-cell *matCellDef="let row">{{ row.cpf | CPF }}</td>
       </ng-container>
       <ng-container matColumnDef="email">
         <th
@@ -61,7 +61,7 @@
           RENDA MENSAL
         </th>
         <td mat-cell *matCellDef="let row">
-          {{ row.monthlyIncome }}
+          {{ row.monthlyIncome | currency : "R$" }}
         </td>
       </ng-container>
 
@@ -74,7 +74,9 @@
         >
           DATA DE NASCIMENTO
         </th>
-        <td mat-cell *matCellDef="let row">{{ row.birtDate | date }}</td>
+        <td mat-cell *matCellDef="let row">
+          {{ row.birtDate | date : "dd/MM/yyyy" }}
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="dateRegister">
@@ -86,7 +88,9 @@
         >
           DATA DE REGISTRO
         </th>
-        <td mat-cell *matCellDef="let row">{{ row.dateRegister | date }}</td>
+        <td mat-cell *matCellDef="let row">
+          {{ row.dateRegister | date : "dd/MM/yyyy" }}
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="action" [style.background-color]="color">

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Client } from '../models/client.interface';
+import { Client } from '../../shared/models/client.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -15,8 +15,8 @@ export class ClientService {
   getClient() {
     return this.http.get<any>('http://localhost:3000/clientList');
   }
-  putClient(data: any, id: number) {
-    return this.http.put<any>('http://localhost:3000/clientList/' + id, data);
+  putClient(client: any, id: number) {
+    return this.http.put<any>('http://localhost:3000/clientList/' + id, client);
   }
   deleteClient(id: number) {
     return this.http.delete<any>('http://localhost:3000/clientList/' + id);

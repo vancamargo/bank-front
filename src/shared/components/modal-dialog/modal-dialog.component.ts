@@ -5,10 +5,17 @@ import {
   Validators,
   ValidationErrors,
 } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+  MatDialog,
+} from '@angular/material/dialog';
 import { ClientService } from 'src/app/services/client.service';
 import { GenericValidator } from '../../validators/validatorCpf';
+
 import { NgxAgeValidator } from 'ngx-age-validator';
+import { ValidatorName } from 'src/shared/validators/validatorName';
+import { ModalDialogSucessOrErrorComponent } from '../modal-dialog-sucess-or-error/modal-dialog-sucess-or-error.component';
 
 @Component({
   selector: 'modal-dialog',
@@ -21,6 +28,7 @@ export class ModalDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<ModalDialogComponent>,
+    public dialogRefErrorOrSucess: MatDialog,
     private formBuilder: FormBuilder,
 
     @Inject(MAT_DIALOG_DATA) public editDataClient: any,
@@ -29,14 +37,16 @@ export class ModalDialogComponent implements OnInit {
 
   ngOnInit() {
     this.clientForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, ValidatorName.spaceName()]],
       cpf: ['', [Validators.required, GenericValidator.isValidCpf()]],
       dateRegister: [''],
       birtDate: ['', NgxAgeValidator(18, 60)],
       monthlyIncome: ['', Validators.required],
       email: ['', Validators.required],
     });
+    this.editClient();
     this.initValidatorAge();
+    this.openModalErrorOrSucess();
   }
 
   initValidatorAge() {
@@ -67,6 +77,7 @@ export class ModalDialogComponent implements OnInit {
       this.clientForm.controls['monthlyIncome'].setValue(
         this.editDataClient.monthlyIncome
       );
+      this.clientForm.controls['email'].setValue(this.editDataClient.email);
     }
   }
 
@@ -75,6 +86,7 @@ export class ModalDialogComponent implements OnInit {
   }
 
   save() {
+    this.openModalErrorOrSucess();
     console.log(this.clientForm);
     if (!this.editDataClient) {
       if (this.clientForm.valid) {
@@ -83,8 +95,9 @@ export class ModalDialogComponent implements OnInit {
         );
         this.clienteService.postClient(this.clientForm.value).subscribe({
           next: (res) => {
-            this.clientForm.reset();
             this.dialogRef.close('save');
+            this.clientForm.reset();
+
             alert('save');
           },
           error: (err) => {
@@ -97,13 +110,19 @@ export class ModalDialogComponent implements OnInit {
     }
   }
 
+  openModalErrorOrSucess() {
+    this.dialogRefErrorOrSucess.open(ModalDialogSucessOrErrorComponent, {
+      width: '250px',
+    });
+  }
+
   updateClient() {
     this.clienteService
       .putClient(this.clientForm.value, this.editDataClient.id)
       .subscribe({
         next: (res) => {
-          this.clientForm.reset();
           this.dialogRef.close('edit');
+          this.clientForm.reset();
           alert('save');
         },
         error: (err) => {
