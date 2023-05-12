@@ -4,7 +4,7 @@ import { NavbarComponent } from './navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { LogoSafraModule } from 'src/shared/logo-safra/logo-safra.module';
+import { LogoSafraModule } from 'src/shared/components/svgs/logo-safra/logo-safra.module';
 
 @NgModule({
   imports: [

@@ -15,7 +15,60 @@ mat-form-fied {
   max-width: 1200px;
   margin: 0 auto;
 }
-// td,
-// th {
-//   width: 25%;
-// }
+
+th.mat-sort-header {
+  color: white;
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+td {
+  font-family: "Inter";
+  line-height: 15px;
+  text-transform: uppercase;
+}
+tr {
+  border-radius: 100px;
+}
+.my-row {
+  border-radius: 50px;
+}
+
+.line-row {
+  background-color: #f7f7f7;
+}
+
+td:first-child,
+th:first-child {
+  border-radius: 40px 0 0 40px;
+}
+
+td:last-child,
+th:last-child {
+  border-radius: 0 40px 40px 0;
+}
+
+.menu {
+  margin-top: 100px;
+  margin-bottom: 37px;
+  display: flex;
+
+  mat-form-field {
+    width: 314px;
+  }
+  &__icon {
+    margin-top: 15px;
+    margin-left: 9px;
+  }
+
+  &__button {
+    // margin-bottom: 20px;
+    margin-left: 48px;
+  }
+}
+
+.mat-mdc-raised-button {
+  width: 100px;
+}

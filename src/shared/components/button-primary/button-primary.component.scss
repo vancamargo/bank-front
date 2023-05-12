@@ -1,4 +1,5 @@
 .mat-mdc-raised-button {
+  font-family: "Inter";
   border-radius: 20px;
   &:hover {
     background-color: #11728b;
@@ -14,6 +15,28 @@
   }
 }
 
-// .mat-mdc-raised-button:hover {
-//   background-color: #11728b;
-// }
+.sm {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.md {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 36px;
+}
+
+.lg {
+  width: 200px;
+  height: 60px;
+  font-weight: 700;
+  width: 153px;
+  height: 40px;
+}
+
+.full {
+  height: 56px;
+  font-weight: 700;
+  font-size: 16px;
+  width: 100%;
+}

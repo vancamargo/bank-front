@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HomeModule } from './pages/home/home.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [AppComponent, ModalDialogComponent],
@@ -40,6 +41,7 @@ import { HomeModule } from './pages/home/home.module';
     HomeModule,
     NgxMaskDirective,
     NgxMaskPipe,
+    MatToolbarModule,
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent],

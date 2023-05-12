@@ -12,6 +12,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { SearchSgvModule } from 'src/shared/components/svgs/search-sgv/search-sgv.module';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    SearchSgvModule,
   ],
   declarations: [HomeComponent],
   exports: [HomeComponent, MatTableModule, MatPaginatorModule, MatSortModule],

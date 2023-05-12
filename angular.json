@@ -26,6 +26,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/typeface-muli/index.css",
               "src/styles.scss"
             ],
             "scripts": []

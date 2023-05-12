@@ -25,6 +25,10 @@ export class HomeComponent implements OnInit {
     'action',
   ];
   dataSource!: MatTableDataSource<any>;
+  color = '#11728B';
+  radiusInit = '40px 0px 0px 40px';
+  radiusFinal = ' 0px 0px 200px 0px';
+  radiusBorder = '50px';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -41,7 +45,8 @@ export class HomeComponent implements OnInit {
   openDialog() {
     this.dialog
       .open(ModalDialogComponent, {
-        width: '70%',
+        width: '336px',
+        height: '425px',
       })
       .afterClosed()
       .subscribe((val) => {
@@ -68,7 +73,8 @@ export class HomeComponent implements OnInit {
   editProdut(row: any) {
     this.dialog
       .open(ModalDialogComponent, {
-        width: '70%',
+        width: '336px',
+        height: '425px',
         data: row,
       })
       .afterClosed()
@@ -79,10 +85,9 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  applyFilter(event: Event) {
+  searchClient(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
