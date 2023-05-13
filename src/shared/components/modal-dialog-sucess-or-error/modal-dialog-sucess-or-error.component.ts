@@ -14,13 +14,27 @@ export class ModalDialogSucessOrErrorComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (this.messagemSucessOrError === 'sucess') {
-      this.messagemModal = 'Cliente adicionado com sucesso';
-    }
-    if (this.messagemSucessOrError === 'delete') {
-      this.messagemModal = 'Deletado com sucesso';
-    } else {
-      this.messagemModal = 'Ocorreu um erro ao salvar';
+    // console.log(this.messagemSucessOrError);
+    // if (this.messagemSucessOrError === 'sucess') {
+    //   this.messagemModal = 'Cliente adicionado com sucesso';
+    // }
+    // if (this.messagemSucessOrError === 'delete') {
+    //   this.messagemModal = 'Deletado com sucesso';
+    // }
+    // if (this.messagemSucessOrError === 'error') {
+    //   this.messagemModal = 'Ocorreu um erro ao salvar';
+    // }
+    debugger;
+    switch (this.messagemSucessOrError) {
+      case 'sucess':
+        this.messagemModal = 'Cliente adicionado com sucesso';
+        break;
+      case 'delete':
+        this.messagemModal = 'Deletado com sucesso';
+        break;
+      case 'error':
+        this.messagemModal = 'Ocorreu um erro ao salvar';
+        break;
     }
   }
 
