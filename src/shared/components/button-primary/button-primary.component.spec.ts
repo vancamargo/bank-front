@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ButtonPrimaryComponent } from './button-primary.component';
+import { MatButtonModule } from '@angular/material/button';
 
 describe('ButtonPrimaryComponent', () => {
   let component: ButtonPrimaryComponent;
@@ -11,9 +12,9 @@ describe('ButtonPrimaryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ButtonPrimaryComponent ]
-    })
-    .compileComponents();
+      declarations: [ButtonPrimaryComponent],
+      imports: [MatButtonModule],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

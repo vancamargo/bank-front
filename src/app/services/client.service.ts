@@ -6,7 +6,7 @@ import { Client } from '../../shared/models/client.interface';
   providedIn: 'root',
 })
 export class ClientService {
-  constructor(private http: HttpClient) {}
+  constructor(public http: HttpClient) {}
 
   postClient(client: Client) {
     return this.http.post<Client>('http://localhost:3000/clientList', client);
