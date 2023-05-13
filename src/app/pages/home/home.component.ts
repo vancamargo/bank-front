@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   constructor(
-    private http: HttpClient,
     public dialog: MatDialog,
     private clienteService: ClientService
   ) {}
@@ -43,7 +42,6 @@ export class HomeComponent implements OnInit {
   }
 
   openDialog() {
-    console.log('aqui');
     this.dialog
       .open(ModalDialogComponent, {
         width: '40%',

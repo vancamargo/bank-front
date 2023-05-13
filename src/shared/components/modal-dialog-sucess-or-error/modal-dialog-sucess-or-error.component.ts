@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal-dialog-sucess-or-error',
@@ -6,7 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modal-dialog-sucess-or-error.component.scss'],
 })
 export class ModalDialogSucessOrErrorComponent implements OnInit {
-  constructor() {}
+  public messagemModal: string;
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public messagemSucessOrError: any,
+    public dialogRefSucessOrError: MatDialogRef<ModalDialogSucessOrErrorComponent>
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.messagemSucessOrError === 'sucess') {
+      this.messagemModal = 'Cliente adicionado com sucesso';
+    } else {
+      this.messagemModal = 'Ocorreu um erro ao salvar';
+    }
+  }
+
+  closeModalDialog() {
+    this.dialogRefSucessOrError.close();
+  }
 }

@@ -1,7 +1,21 @@
-<h1 mat-dialog-title>Cliente</h1>
-<div mat-dialog-content>
-  <icon-sucess></icon-sucess>
-</div>
-<div class="modal-button" mat-dialog-actions [align]="'end'">
-  <button></button>
+<div class="modal-sucess-error">
+  <div mat-dialog-content [align]="'center'">
+    <icon-sucess
+      class="modal-sucess-error__logo"
+      *ngIf="messagemSucessOrError === 'sucess'"
+    ></icon-sucess>
+    <icon-error
+      class="modal-sucess-error__logo"
+      *ngIf="messagemSucessOrError === 'error'"
+    ></icon-error>
+    <div class="modal-sucess-error__title-sucess">
+      <span>{{ messagemModal }}</span>
+    </div>
+
+    <div class="modal-sucess-error__button">
+      <button-primary [size]="'lg'" (click)="closeModalDialog()"
+        >OK</button-primary
+      >
+    </div>
+  </div>
 </div>

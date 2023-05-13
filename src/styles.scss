@@ -77,6 +77,8 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-dialog {
-  border: 100px !important;
+::ng-deep #dialogTrasparent {
+  padding: 0px !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }

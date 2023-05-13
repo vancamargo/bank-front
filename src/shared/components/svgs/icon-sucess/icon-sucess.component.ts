@@ -4,8 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'icon-sucess',
   templateUrl: './icon-sucess.component.html',
 })
-export class IconSucessComponent implements OnInit {
+export class IconSucessComponent {
   constructor() {}
-
-  ngOnInit() {}
 }

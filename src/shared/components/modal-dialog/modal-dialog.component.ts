@@ -46,7 +46,7 @@ export class ModalDialogComponent implements OnInit {
     });
     this.editClient();
     this.initValidatorAge();
-    this.openModalErrorOrSucess();
+    this.openModalErrorOrSucess('error');
   }
 
   initValidatorAge() {
@@ -86,7 +86,6 @@ export class ModalDialogComponent implements OnInit {
   }
 
   save() {
-    this.openModalErrorOrSucess();
     console.log(this.clientForm);
     if (!this.editDataClient) {
       if (this.clientForm.valid) {
@@ -97,11 +96,10 @@ export class ModalDialogComponent implements OnInit {
           next: (res) => {
             this.dialogRef.close('save');
             this.clientForm.reset();
-
-            alert('save');
+            this.openModalErrorOrSucess('sucess');
           },
           error: (err) => {
-            alert('error');
+            this.openModalErrorOrSucess('error');
           },
         });
       }
@@ -110,10 +108,17 @@ export class ModalDialogComponent implements OnInit {
     }
   }
 
-  openModalErrorOrSucess() {
-    this.dialogRefErrorOrSucess.open(ModalDialogSucessOrErrorComponent, {
-      width: '250px',
-    });
+  openModalErrorOrSucess(sucesseOrError: string) {
+    const dialogRef = this.dialogRefErrorOrSucess.open(
+      ModalDialogSucessOrErrorComponent,
+      {
+        width: '382px',
+        height: '286px',
+        data: sucesseOrError,
+      }
+    );
+
+    dialogRef.afterClosed();
   }
 
   updateClient() {
@@ -123,10 +128,10 @@ export class ModalDialogComponent implements OnInit {
         next: (res) => {
           this.dialogRef.close('edit');
           this.clientForm.reset();
-          alert('save');
+          this.openModalErrorOrSucess('sucess');
         },
         error: (err) => {
-          alert('error');
+          this.openModalErrorOrSucess('error');
         },
       });
   }

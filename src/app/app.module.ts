@@ -22,6 +22,7 @@ import { HomeModule } from './pages/home/home.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { IconSucessModule } from 'src/shared/components/svgs/icon-sucess/icon-sucess.module';
 import { ModalDialogSucessOrErrorComponent } from 'src/shared/components/modal-dialog-sucess-or-error/modal-dialog-sucess-or-error.component';
+import { IconErrorModule } from 'src/shared/components/svgs/icon-error/icon-error.module';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ModalDialogSucessOrErrorComponent } from 'src/shared/components/modal-d
     NgxMaskPipe,
     MatToolbarModule,
     IconSucessModule,
+    IconErrorModule,
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent],
