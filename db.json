@@ -44,6 +44,15 @@
       "monthlyIncome": 10000,
       "email": "s@gmail.com",
       "id": 9
+    },
+    {
+      "name": "teste novd",
+      "cpf": "25380068138",
+      "dateRegister": "Sat, 13 May 2023 23:22:20 GMT",
+      "birtDate": "1969-02-04T03:00:00.000Z",
+      "monthlyIncome": 656565,
+      "email": "sss@gmail.com",
+      "id": 10
     }
   ],
   "comments": [

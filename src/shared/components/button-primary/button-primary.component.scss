@@ -1,17 +1,18 @@
+@import "src/shared/styles/_variables.scss";
 .mat-mdc-raised-button {
   font-family: "Inter";
   border-radius: 20px;
   color: #ffff;
   font-weight: 700;
   &:hover {
-    background-color: #11728b;
+    background-color: $color-brand-primary-light;
   }
   &:focus {
-    background-color: #00586f;
+    background-color: $color-brand-primary-medium;
     box-shadow: none;
   }
   &:active {
-    background-color: #053542;
+    background-color: $color-brand-background-color;
     box-shadow: none;
   }
 }
