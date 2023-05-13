@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     'email',
     'action',
   ];
-  dataSource!: MatTableDataSource<any>;
+  dataSource: MatTableDataSource<Client>;
   color = '#11728B';
   radiusInit = '40px 0px 0px 40px';
   radiusFinal = ' 0px 0px 200px 0px';
@@ -62,7 +62,6 @@ export class HomeComponent implements OnInit {
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-        console.log(res);
       },
       error: (err) => {},
     });

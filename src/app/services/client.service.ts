@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Client } from '../../shared/models/client.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,17 +9,20 @@ import { Client } from '../../shared/models/client.interface';
 export class ClientService {
   constructor(public http: HttpClient) {}
 
-  postClient(client: Client) {
+  postClient(client: Client): Observable<Client> {
     return this.http.post<Client>('http://localhost:3000/clientList', client);
   }
 
-  getClient() {
-    return this.http.get<any>('http://localhost:3000/clientList');
+  getClient(): Observable<Client[]> {
+    return this.http.get<Client[]>('http://localhost:3000/clientList');
   }
-  putClient(client: any, id: number) {
-    return this.http.put<any>('http://localhost:3000/clientList/' + id, client);
+  putClient(client: Client, id: number) {
+    return this.http.put<Client>(
+      'http://localhost:3000/clientList/' + id,
+      client
+    );
   }
   deleteClient(id: number) {
-    return this.http.delete<any>('http://localhost:3000/clientList/' + id);
+    return this.http.delete<Client>('http://localhost:3000/clientList/' + id);
   }
 }

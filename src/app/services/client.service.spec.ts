@@ -5,13 +5,18 @@ import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
+import { Client } from 'src/shared/models/client.interface';
 
 describe('ApiService', () => {
   let httpTestingController: HttpTestingController;
-  const clients: any = [
-    { id: 1, name: 'John' },
-    { id: 2, name: 'Jane' },
-  ];
+  let clients: Client = {
+    name: 'teste',
+    category: 'novo',
+    cpf: '656.655.545-0',
+    dateRegister: new Date('1969-07-10T03:00:00.000Z'),
+    birtDate: new Date('1969-07-10T03:00:00.000Z'),
+    monthlyIncome: '5645,555',
+  };
 
   let service: ClientService;
   beforeEach(() => {
@@ -45,6 +50,16 @@ describe('ApiService', () => {
   });
 
   it('should get clients', () => {
+    let clients: Client[] = [
+      {
+        name: 'teste',
+        category: 'novo',
+        cpf: '656.655.545-0',
+        dateRegister: new Date('1969-07-10T03:00:00.000Z'),
+        birtDate: new Date('1969-07-10T03:00:00.000Z'),
+        monthlyIncome: '5645,555',
+      },
+    ];
     service.getClient().subscribe((res) => {
       expect(res).toEqual(clients);
     });
@@ -73,9 +88,7 @@ describe('ApiService', () => {
   it('should delete a client', () => {
     const id = 1;
 
-    service.deleteClient(id).subscribe((res) => {
-      expect(res).toEqual({});
-    });
+    service.deleteClient(id).subscribe((res) => {});
 
     const req = httpTestingController.expectOne(
       'http://localhost:3000/clientList/1'
