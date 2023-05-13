@@ -24,7 +24,6 @@
     "ngx-age-validator": "^0.1.0",
     "ngx-mask": "^15.1.4",
     "rxjs": "~7.5.0",
-    "text-mask-addons": "^3.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

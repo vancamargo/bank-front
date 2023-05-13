@@ -45,21 +45,6 @@ export class ModalDialogComponent implements OnInit {
       email: ['', Validators.required],
     });
     this.editClient();
-    this.initValidatorAge();
-  }
-
-  initValidatorAge() {
-    this.clientForm.valueChanges.subscribe(() => {
-      const controlErrors: ValidationErrors | null = this.clientForm.errors;
-      if (controlErrors != null) {
-        Object.keys(controlErrors).forEach((keyError) => {
-          console.log(
-            ' keyError: ' + keyError + ', err value: ',
-            controlErrors[keyError]
-          );
-        });
-      }
-    });
   }
 
   editClient() {
@@ -85,7 +70,6 @@ export class ModalDialogComponent implements OnInit {
   }
 
   save() {
-    console.log(this.clientForm);
     if (!this.editDataClient) {
       if (this.clientForm.valid) {
         this.clientForm.controls['dateRegister'].setValue(

@@ -18,39 +18,23 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
-import { HomeModule } from './pages/home/home.module';
+import { HomeModule } from './home/home.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { IconSucessModule } from 'src/shared/components/svgs/icon-sucess/icon-sucess.module';
 import { ModalDialogSucessOrErrorComponent } from 'src/shared/components/modal-dialog-sucess-or-error/modal-dialog-sucess-or-error.component';
 import { IconErrorModule } from 'src/shared/components/svgs/icon-error/icon-error.module';
+import { SharedModule } from 'src/shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ModalDialogComponent,
-    ModalDialogSucessOrErrorComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    ButtonPrimaryModule,
-    MatDialogModule,
-    MatInputModule,
-    MatNativeDateModule,
-    MatNativeDateModule,
-    MatDatepickerModule,
     HttpClientModule,
-    MatPaginatorModule,
     HomeModule,
-    NgxMaskDirective,
-    NgxMaskPipe,
-    MatToolbarModule,
-    IconSucessModule,
-    IconErrorModule,
+    SharedModule,
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent],
