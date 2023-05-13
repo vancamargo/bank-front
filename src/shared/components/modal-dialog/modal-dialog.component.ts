@@ -40,13 +40,12 @@ export class ModalDialogComponent implements OnInit {
       name: ['', [Validators.required, ValidatorName.spaceName()]],
       cpf: ['', [Validators.required, GenericValidator.isValidCpf()]],
       dateRegister: [''],
-      birtDate: ['', NgxAgeValidator(18, 60)],
+      birtDate: ['', [NgxAgeValidator(18, 60), Validators.required]],
       monthlyIncome: ['', Validators.required],
       email: ['', Validators.required],
     });
     this.editClient();
     this.initValidatorAge();
-    this.openModalErrorOrSucess('error');
   }
 
   initValidatorAge() {

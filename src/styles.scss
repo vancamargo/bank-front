@@ -77,8 +77,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-::ng-deep #dialogTrasparent {
-  padding: 0px !important;
+mat-raised-button:active:after {
   box-shadow: none !important;
-  background: transparent !important;
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
 }

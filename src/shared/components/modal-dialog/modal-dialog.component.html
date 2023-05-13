@@ -3,10 +3,18 @@
 <h1 mat-dialog-title>{{ btnAction }} Cliente</h1>
 <div mat-dialog-content>
   <form [formGroup]="clientForm">
-    <mat-form-field class="example-full-width" appearance="outline">
+    <mat-form-field
+      class="example-full-width"
+      appearance="outline"
+      floatLabel="always"
+    >
       <mat-label>Nome</mat-label>
       <input matInput placeholder="name" formControlName="name" />
+      <mat-error class="error-msg" *ngIf="clientForm.controls['name'].errors">
+        Digite nome
+      </mat-error>
     </mat-form-field>
+
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>CPF</mat-label>
       <input
@@ -15,6 +23,9 @@
         formControlName="cpf"
         mask="000.000.000-00"
       />
+      <mat-error class="error-msg" *ngIf="clientForm.controls['cpf'].errors">
+        Digite CPF
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Data de Nascimento</mat-label>
@@ -25,26 +36,35 @@
       ></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
 
-      <!-- <mat-error *ngIf="clientForm.hasError('tooJung')"
-        >You are too jung!</mat-error
+      <mat-error
+        class="error-msg"
+        *ngIf="clientForm.controls['birtDate'].errors"
       >
-      <mat-error *ngIf="clientForm.hasError('tooOld')"
-        >You are too old!</mat-error
-      > -->
+        Digite data de nascimento
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Renda Mensal</mat-label>
       <input
         matInput
-        placeholder="name"
+        placeholder="Renda Mensal"
         formControlName="monthlyIncome"
         mask="separator.2"
         thousandSeparator=","
       />
+      <mat-error
+        class="error-msg"
+        *ngIf="clientForm.controls['monthlyIncome'].errors"
+      >
+        Digite renda mensal
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>E-mail</mat-label>
       <input matInput placeholder="email" formControlName="email" />
+      <mat-error class="error-msg" *ngIf="clientForm.controls['email'].errors">
+        Digite E-mail
+      </mat-error>
     </mat-form-field>
   </form>
 </div>

@@ -7,10 +7,6 @@ table {
   width: 100%;
 }
 
-mat-form-fied {
-  font-size: 14px;
-  width: 100%;
-}
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -27,7 +23,6 @@ th.mat-sort-header {
 }
 
 td {
-  // font-family: "Inter";
   line-height: 10px;
   text-transform: uppercase;
 }
@@ -68,8 +63,4 @@ th:last-child {
   &__button {
     margin-left: 48px;
   }
-}
-
-.mat-mdc-raised-button {
-  width: 100px;
 }
