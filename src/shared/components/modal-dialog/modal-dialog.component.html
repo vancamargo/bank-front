@@ -1,13 +1,11 @@
 <mat-toolbar class="navbar" color="primary"> </mat-toolbar>
 
-<h1 mat-dialog-title>{{ btnAction }} Cliente</h1>
+<div>
+  <h1 mat-dialog-title>{{ btnAction }} Cliente</h1>
+</div>
 <div mat-dialog-content>
   <form [formGroup]="clientForm">
-    <mat-form-field
-      class="example-full-width"
-      appearance="outline"
-      floatLabel="always"
-    >
+    <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Nome</mat-label>
       <input matInput placeholder="name" formControlName="name" />
       <mat-error class="error-msg" *ngIf="clientForm.controls['name'].errors">

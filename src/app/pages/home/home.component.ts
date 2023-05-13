@@ -8,6 +8,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { Client } from 'src/shared/models/client.interface';
+import { ModalDialogSucessOrErrorComponent } from 'src/shared/components/modal-dialog-sucess-or-error/modal-dialog-sucess-or-error.component';
 
 @Component({
   selector: 'app-home',
@@ -34,7 +35,8 @@ export class HomeComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   constructor(
     public dialog: MatDialog,
-    private clienteService: ClientService
+    private clienteService: ClientService,
+    public dialogRefErrorOrSucess: MatDialog
   ) {}
 
   ngOnInit() {
@@ -62,9 +64,7 @@ export class HomeComponent implements OnInit {
         this.dataSource.sort = this.sort;
         console.log(res);
       },
-      error: (err) => {
-        alert('error');
-      },
+      error: (err) => {},
     });
   }
 
@@ -90,15 +90,26 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  openModalErrorOrSucess(sucesseOrError: string) {
+    const dialogRef = this.dialogRefErrorOrSucess.open(
+      ModalDialogSucessOrErrorComponent,
+      {
+        width: '382px',
+        height: '286px',
+        data: sucesseOrError,
+      }
+    );
+
+    dialogRef.afterClosed();
+  }
+
   deleteClient(id: number) {
     this.clienteService.deleteClient(id).subscribe({
       next: (res) => {
-        alert('delete Sucess');
+        this.openModalErrorOrSucess('delete');
         this.getAllClients();
       },
-      error: (err) => {
-        alert('error delete');
-      },
+      error: (err) => {},
     });
   }
 }

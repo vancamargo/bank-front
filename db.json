@@ -1,24 +1,6 @@
 {
   "clientList": [
     {
-      "name": "vanessa yedsdd",
-      "cpf": "36259265808",
-      "dateRegister": "Fri, 12 May 2023 19:03:58 GMT",
-      "birtDate": "1981-11-19T03:00:00.000Z",
-      "monthlyIncome": 100000,
-      "email": "vanessacamargo@gmail.com",
-      "id": 1
-    },
-    {
-      "name": "vanessa ",
-      "cpf": "77433466410",
-      "dateRegister": "Fri, 12 May 2023 19:04:48 GMT",
-      "birtDate": "1997-06-18T03:00:00.000Z",
-      "monthlyIncome": 10000,
-      "email": "ssddd@g.com",
-      "id": 2
-    },
-    {
       "name": "teste dsdsds",
       "cpf": "77433466410",
       "dateRegister": "Fri, 12 May 2023 19:06:42 GMT",

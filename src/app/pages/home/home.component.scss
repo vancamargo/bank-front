@@ -7,23 +7,26 @@ table {
   width: 100%;
 }
 
-.container {
+.data-table {
   max-width: 1200px;
   margin: 0 auto;
   text-transform: uppercase;
   font-family: "Inter";
+  &__title {
+    margin-top: 38px;
+    margin-bottom: -28px;
+  }
 }
 
 th.mat-sort-header {
   color: white;
-
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;
 }
 
 td {
-  line-height: 10px;
+  font-size: 12px;
   text-transform: uppercase;
 }
 tr {
@@ -45,6 +48,13 @@ th:first-child {
 td:last-child,
 th:last-child {
   border-radius: 0 40px 40px 0;
+}
+
+span {
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0b4051;
 }
 
 .menu {

@@ -16,6 +16,9 @@ export class ModalDialogSucessOrErrorComponent implements OnInit {
   ngOnInit() {
     if (this.messagemSucessOrError === 'sucess') {
       this.messagemModal = 'Cliente adicionado com sucesso';
+    }
+    if (this.messagemSucessOrError === 'delete') {
+      this.messagemModal = 'Deletado com sucesso';
     } else {
       this.messagemModal = 'Ocorreu um erro ao salvar';
     }
