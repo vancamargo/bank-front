@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 // define a real custom palette (using http://mcg.mbitson.com)
-$safra-primary: (
+$bank-primary: (
   50: #0a4a5b,
   100: #0a4a5b,
   200: #0a4a5b,
@@ -29,7 +29,7 @@ $safra-primary: (
   ),
 );
 
-$safra-secondary: (
+$bank-secondary: (
   50: #eefaea,
   100: #d5f3cb,
   200: #b9eca9,
@@ -62,10 +62,10 @@ $safra-secondary: (
   ),
 );
 
-$bv-palette-primary: mat-palette($safra-primary);
-$safra-secondary: mat-palette($safra-secondary);
+$bv-palette-primary: mat-palette($bank-primary);
+$bank-secondary: mat-palette($bank-secondary);
 
-$bv-theme: mat-light-theme($bv-palette-primary, $safra-secondary);
+$bv-theme: mat-light-theme($bv-palette-primary, $bank-secondary);
 
 @include angular-material-theme($bv-theme);
 

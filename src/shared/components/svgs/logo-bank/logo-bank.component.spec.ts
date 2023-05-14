@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { LogoBankComponent } from './logo-bank.component';
 
-describe('LogoSafraComponent', () => {
+describe('LogobankComponent', () => {
   let component: LogoBankComponent;
   let fixture: ComponentFixture<LogoBankComponent>;
 
