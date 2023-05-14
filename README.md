@@ -3,11 +3,14 @@
 ## Mock Json Server
 
 Para iniciar o json server:
-No terminal digite: json-server --watch db.json
+No terminal digite: npx json-server --watch db.json
 
 ## Iniciando o projeto
 
-Este é um projeto Angular criado com a versão v15.0.0 e utilizando o Node.js na versão v14.20.0.
+Para iniciar o projeto:
+No terminal digite: npx ng s
+
+Este é um projeto Angularé criado com a versão v15.0.0 e utilizando o Node.js na versão v14.20.0.
 
 Como executar o projeto
 Antes de executar o projeto, certifique-se de ter o Node.js instalado em sua máquina.

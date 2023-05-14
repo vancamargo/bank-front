@@ -7,7 +7,7 @@
   <form [formGroup]="clientForm">
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>Nome</mat-label>
-      <input matInput placeholder="name" formControlName="name" />
+      <input matInput placeholder="Nome" formControlName="name" />
       <mat-error class="error-msg" *ngIf="clientForm.controls['name'].errors">
         Digite nome
       </mat-error>
@@ -17,7 +17,7 @@
       <mat-label>CPF</mat-label>
       <input
         matInput
-        placeholder="cpf"
+        placeholder="Cpf"
         formControlName="cpf"
         mask="000.000.000-00"
       />
