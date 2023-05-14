@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'logo-safra',
-  templateUrl: './logo-safra.component.html',
+  selector: 'logo-bank',
+  templateUrl: './logo-bank.component.html',
 })
-export class LogoSafraComponent {
+export class LogoBankComponent {
   constructor() {}
 
   ngOnInit() {}

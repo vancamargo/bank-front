@@ -3,21 +3,20 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { LogoSafraComponent } from './logo-safra.component';
+import { LogoBankComponent } from './logo-bank.component';
 
 describe('LogoSafraComponent', () => {
-  let component: LogoSafraComponent;
-  let fixture: ComponentFixture<LogoSafraComponent>;
+  let component: LogoBankComponent;
+  let fixture: ComponentFixture<LogoBankComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LogoSafraComponent ]
-    })
-    .compileComponents();
+      declarations: [LogoBankComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LogoSafraComponent);
+    fixture = TestBed.createComponent(LogoBankComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

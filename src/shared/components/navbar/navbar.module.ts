@@ -1,10 +1,10 @@
+import { LogoBankModule } from 'src/shared/components/svgs/logo-bank/logo-bank.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { LogoSafraModule } from 'src/shared/components/svgs/logo-safra/logo-safra.module';
 
 @NgModule({
   imports: [
@@ -12,7 +12,7 @@ import { LogoSafraModule } from 'src/shared/components/svgs/logo-safra/logo-safr
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    LogoSafraModule,
+    LogoBankModule,
   ],
   declarations: [NavbarComponent],
   exports: [NavbarComponent],
