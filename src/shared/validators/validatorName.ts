@@ -1,19 +1,21 @@
 import { AbstractControl, Validators } from '@angular/forms';
 
 export class ValidatorName {
-  static spaceName() {
+  static validateFullName() {
     return (control: AbstractControl): Validators => {
       const name = control.value;
-      if (name) {
-        let val = control.value;
-        var nameSpace = val.split(' ');
-        if (nameSpace.length >= 2) {
-          return false;
-        } else {
-          return { lastName: true };
-        }
+
+      if (!name) {
+        return false;
       }
-      return false;
+
+      const words = name.split(' ');
+
+      if (words.length === 2 && words[0].length >= 1 && words[1].length >= 1) {
+        return false;
+      }
+
+      return { lastName: true };
     };
   }
 }

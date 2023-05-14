@@ -37,7 +37,7 @@ export class ModalDialogComponent implements OnInit {
 
   ngOnInit() {
     this.clientForm = this.formBuilder.group({
-      name: ['', [Validators.required, ValidatorName.spaceName()]],
+      name: ['', [Validators.required, ValidatorName.validateFullName()]],
       cpf: ['', [Validators.required, GenericValidator.isValidCpf()]],
       dateRegister: [''],
       birtDate: ['', [NgxAgeValidator(18, 60), Validators.required]],
