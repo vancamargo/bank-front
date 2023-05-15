@@ -3,7 +3,7 @@
 Iniciando o projeto
 Para instalar o projeto, siga as instruções abaixo:
 
-Abra o terminal e digite: npm install ou npx npm install.
+Abra o terminal e digite: `npm install` ou npx `npm install`.
 
 Para iniciar o projeto, digite o seguinte comando no terminal: npx ng s.
 
