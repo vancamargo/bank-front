@@ -18,7 +18,6 @@ export class ModalDialogSucessOrErrorComponent implements OnInit {
   }
 
   caseMessage() {
-    console.log(this.messagemSucessOrError);
     switch (this.messagemSucessOrError) {
       case 'sucess':
         this.messagemModal = 'Cliente adicionado com sucesso';

@@ -1,0 +1,51 @@
+// //@import "@angular/material/theming"; //notice that the file imported is also different
+
+// // @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+// @import "./variables.scss";
+// // @include mat-core();
+
+// // $front-ui-primary: mat-palette($bank-primary);
+// // $front-ui-accent: mat-palette($bank-secondary);
+// // $front-ui-accent: mat-palette($bank-secondary);
+
+// // $front-ui-theme: mat-light-theme($front-ui-primary, $front-ui-accent);
+
+// // @include angular-material-theme($front-ui-theme);
+
+// @import "./variables.scss";
+// @import "@angular/material/theming";
+
+// @include mat-core();
+
+// //default theme
+// $front-ui-primary: mat-palette($lps-red, 500);
+// $front-ui-accent: mat-palette($lps-warn);
+// $front-ui-warn: mat-palette($lps-yellow);
+
+// $front-ui-theme: mat-light-theme(
+//   $front-ui-primary,
+//   $front-ui-accent,
+//   $front-ui-warn
+// );
+
+// @include angular-material-theme($front-ui-theme);
+
+// //alternative theme
+// $alternative-primary: mat-palette($lps-green);
+// $alternative-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// $alternative-theme: mat-light-theme($alternative-primary, $alternative-accent);
+
+// @include mat-form-field-theme($alternative-theme); // Form-Field theme
+// @include mat-input-theme($alternative-theme);
+@import "@angular/material/theming"; //notice that the file imported is also different
+@include mat-core();
+@import "./variables.scss";
+
+$primary: mat-palette($bank-primary, 500);
+$secondary: mat-palette($bank-secondary, 500);
+$tertiary: mat-palette($bank-secondary, 500);
+
+$bv-theme: mat-light-theme($primary, $secondary, $tertiary);
+
+@include angular-material-theme($bv-theme);
