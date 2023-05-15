@@ -28,6 +28,9 @@ export class ModalDialogSucessOrErrorComponent implements OnInit {
       case 'error':
         this.messagemModal = 'Ocorreu um erro ao salvar';
         break;
+      case 'edit':
+        this.messagemModal = 'Cliente editado com sucesso';
+        break;
     }
   }
 

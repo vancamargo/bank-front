@@ -121,7 +121,7 @@ export class ModalDialogComponent implements OnInit {
         next: (res) => {
           this.dialogRef.close('edit');
           this.clientForm.reset();
-          this.openModalErrorOrSucess('sucess');
+          this.openModalErrorOrSucess('edit');
         },
         error: (err) => {
           this.openModalErrorOrSucess('error');
