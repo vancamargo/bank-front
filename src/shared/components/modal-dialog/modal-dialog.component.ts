@@ -42,7 +42,14 @@ export class ModalDialogComponent implements OnInit {
       dateRegister: [''],
       birtDate: ['', [NgxAgeValidator(18, 60), Validators.required]],
       monthlyIncome: ['', Validators.required],
-      email: ['', Validators.required],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+        ],
+      ],
     });
     this.editClient();
   }

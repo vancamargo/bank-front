@@ -22,7 +22,13 @@
         mask="000.000.000-00"
       />
       <mat-error class="error-msg" *ngIf="clientForm.controls['cpf'].errors">
-        Digite CPF
+        Campo Obrigatorio
+      </mat-error>
+      <mat-error
+        class="error-msg"
+        *ngIf="clientForm.controls['cpf'].errors?.cpfNotValid"
+      >
+        CPF não é valido
       </mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
@@ -38,7 +44,13 @@
         class="error-msg"
         *ngIf="clientForm.controls['birtDate'].errors"
       >
-        Digite data de nascimento
+        Campo Obrigatorio
+      </mat-error>
+      <mat-error *ngIf="clientForm.controls['birtDate'].errors?.tooJung">
+        Invalido: Idade abaixo de 18
+      </mat-error>
+      <mat-error *ngIf="clientForm.controls['birtDate'].errors?.tooOld">
+        Invalido: Idade acima de 60
       </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
@@ -54,14 +66,22 @@
         class="error-msg"
         *ngIf="clientForm.controls['monthlyIncome'].errors"
       >
-        Digite renda mensal
+        Campo Obrigatorio
       </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>E-mail</mat-label>
-      <input matInput placeholder="email" formControlName="email" />
+      <input
+        matInput
+        placeholder="email"
+        formControlName="email"
+        type="email"
+      />
       <mat-error class="error-msg" *ngIf="clientForm.controls['email'].errors">
-        Digite E-mail
+        Campo Obrigatorio
+      </mat-error>
+      <mat-error *ngIf="clientForm.controls['email'].errors?.email">
+        Digite um E-mail valido
       </mat-error>
     </mat-form-field>
   </form>
