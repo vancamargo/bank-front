@@ -115,7 +115,6 @@ export class ModalDialogComponent implements OnInit {
   }
 
   updateClient() {
-    debugger;
     this.clienteService
       .putClient(this.clientForm.value, this.editDataClient.id)
       .subscribe({
