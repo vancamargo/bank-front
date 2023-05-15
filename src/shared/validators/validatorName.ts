@@ -11,7 +11,7 @@ export class ValidatorName {
 
       const words = name.split(' ');
 
-      if (words.length === 2 && words[0].length >= 1 && words[1].length >= 1) {
+      if (words.length > 1 && words[0].length >= 1 && words[1].length >= 1) {
         return false;
       }
 

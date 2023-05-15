@@ -7,6 +7,10 @@ import {
 } from '@angular/common/http/testing';
 import { Client } from 'src/shared/models/client.interface';
 
+const environment = {
+  production: false,
+  base_url_home: 'http://localhost:3000',
+};
 describe('ApiService', () => {
   let httpTestingController: HttpTestingController;
   let clients: Client = {
@@ -21,7 +25,13 @@ describe('ApiService', () => {
   let service: ClientService;
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ClientService],
+      providers: [
+        ClientService,
+        {
+          provide: 'env',
+          useValue: environment,
+        },
+      ],
       imports: [HttpClientTestingModule],
     });
 
