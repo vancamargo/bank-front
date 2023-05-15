@@ -1,4 +1,4 @@
-import { Directive, HostListener } from '@angular/core';
+
 import { AbstractControl, NgControl, Validators } from '@angular/forms';
 
 export class GenericValidator {

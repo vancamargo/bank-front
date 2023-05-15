@@ -11,11 +11,12 @@ import {
   MatDialog,
 } from '@angular/material/dialog';
 import { ClientService } from 'src/app/services/client.service';
-import { GenericValidator } from '../../validators/validatorCpf';
+import { GenericValidator } from '../../validators/validator-cpf.validators';
 
 import { NgxAgeValidator } from 'ngx-age-validator';
-import { ValidatorName } from 'src/shared/validators/validatorName';
+import { ValidatorName } from 'src/shared/validators/validator-name.validators';
 import { ModalDialogSucessOrErrorComponent } from '../modal-dialog-sucess-or-error/modal-dialog-sucess-or-error.component';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'modal-dialog',
@@ -30,12 +31,13 @@ export class ModalDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<ModalDialogComponent>,
     public dialogRefErrorOrSucess: MatDialog,
     private formBuilder: FormBuilder,
-
+    private dateAdapter: DateAdapter<Date>,
     @Inject(MAT_DIALOG_DATA) public editDataClient: any,
     private clienteService: ClientService
   ) {}
 
   ngOnInit() {
+    this.dateAdapter.setLocale('pt-br');
     this.clientForm = this.formBuilder.group({
       name: ['', [Validators.required, ValidatorName.validateFullName()]],
       cpf: ['', [Validators.required, GenericValidator.isValidCpf()]],
@@ -105,6 +107,7 @@ export class ModalDialogComponent implements OnInit {
         width: '382px',
         height: '286px',
         data: sucesseOrError,
+        panelClass: 'dialog-sucess-error',
       }
     );
 
@@ -112,6 +115,7 @@ export class ModalDialogComponent implements OnInit {
   }
 
   updateClient() {
+    debugger;
     this.clienteService
       .putClient(this.clientForm.value, this.editDataClient.id)
       .subscribe({

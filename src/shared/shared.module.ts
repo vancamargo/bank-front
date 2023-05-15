@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
 import { MatToolbarModule } from '@angular/material/toolbar';

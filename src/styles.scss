@@ -22,7 +22,6 @@ $bank-primary: (
     50: #000000,
     100: #000000,
     200: #000000,
-
     A100: #000000,
     A200: #000000,
     A400: #000000,
@@ -72,4 +71,12 @@ $bv-theme: mat-light-theme($bv-palette-primary, $bank-secondary);
 body {
   margin: 0px;
   font-family: "Inter", sans-serif;
+}
+
+.dialog-sucess-error {
+  .mat-mdc-dialog-container,
+  .mat-mdc-dialog-container .mdc-dialog__container,
+  .mat-mdc-dialog-container .mdc-dialog__surface {
+    border-radius: 60px 0px 60px 60px;
+  }
 }

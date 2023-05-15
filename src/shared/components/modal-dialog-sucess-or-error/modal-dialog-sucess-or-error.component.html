@@ -2,7 +2,9 @@
   <div mat-dialog-content [align]="'center'">
     <icon-sucess
       class="modal-sucess-error__logo"
-      *ngIf="messagemSucessOrError === 'sucess' || 'delete'"
+      *ngIf="
+        messagemSucessOrError === 'sucess' || messagemSucessOrError === 'delete'
+      "
     ></icon-sucess>
     <icon-error
       class="modal-sucess-error__logo"

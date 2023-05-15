@@ -1,29 +1,36 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonPrimaryModule } from '../shared/components/button-primary/button-primary.module';
-
-import { ReactiveFormsModule } from '@angular/forms';
-
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ModalDialogComponent } from 'src/shared/components/modal-dialog/modal-dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { provideNgxMask } from 'ngx-mask';
 import { HomeModule } from './home/home.module';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { IconSucessModule } from 'src/shared/components/svgs/icon-sucess/icon-sucess.module';
-import { ModalDialogSucessOrErrorComponent } from 'src/shared/components/modal-dialog-sucess-or-error/modal-dialog-sucess-or-error.component';
-import { IconErrorModule } from 'src/shared/components/svgs/icon-error/icon-error.module';
 import { SharedModule } from 'src/shared/shared.module';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+import {
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+} from '@angular/material/core';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
+
+const DATE_PT_BR = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
+
+registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,7 +43,15 @@ import { SharedModule } from 'src/shared/shared.module';
     HomeModule,
     SharedModule,
   ],
-  providers: [provideNgxMask()],
+  providers: [
+    provideNgxMask(),
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
+      deps: [MAT_DATE_LOCALE],
+    },
+    { provide: MAT_DATE_FORMATS, useValue: DATE_PT_BR },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

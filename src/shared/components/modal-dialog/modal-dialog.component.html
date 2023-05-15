@@ -9,7 +9,13 @@
       <mat-label>Nome</mat-label>
       <input matInput placeholder="Nome" formControlName="name" />
       <mat-error class="error-msg" *ngIf="clientForm.controls['name'].errors">
-        Digite nome
+        Campo obrigatório
+      </mat-error>
+      <mat-error
+        class="error-msg"
+        *ngIf="clientForm.controls['name'].errors?.lastName"
+      >
+        Digite o sobrenome
       </mat-error>
     </mat-form-field>
 
@@ -22,7 +28,7 @@
         mask="000.000.000-00"
       />
       <mat-error class="error-msg" *ngIf="clientForm.controls['cpf'].errors">
-        Campo Obrigatorio
+        Campo obrigatório
       </mat-error>
       <mat-error
         class="error-msg"
@@ -33,7 +39,12 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Data de Nascimento</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="birtDate" />
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="birtDate"
+        datePickerFormat="DD/MM/YYYY"
+      />
       <mat-datepicker-toggle
         matIconSuffix
         [for]="picker"
@@ -44,7 +55,7 @@
         class="error-msg"
         *ngIf="clientForm.controls['birtDate'].errors"
       >
-        Campo Obrigatorio
+        Campo obrigatório
       </mat-error>
       <mat-error *ngIf="clientForm.controls['birtDate'].errors?.tooJung">
         Invalido: Idade abaixo de 18
@@ -60,13 +71,15 @@
         placeholder="Renda Mensal"
         formControlName="monthlyIncome"
         mask="separator.2"
-        thousandSeparator=","
+        thousandSeparator="."
+        separatorLimit="999999999"
+        prefix="R$"
       />
       <mat-error
         class="error-msg"
         *ngIf="clientForm.controls['monthlyIncome'].errors"
       >
-        Campo Obrigatorio
+        Campo obrigatório
       </mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width" appearance="outline">
@@ -78,9 +91,9 @@
         type="email"
       />
       <mat-error class="error-msg" *ngIf="clientForm.controls['email'].errors">
-        Campo Obrigatorio
+        Campo obrigatório
       </mat-error>
-      <mat-error *ngIf="clientForm.controls['email'].errors?.email">
+      <mat-error *ngIf="clientForm.controls['email'].errors?.pattern">
         Digite um E-mail valido
       </mat-error>
     </mat-form-field>
@@ -94,6 +107,6 @@
     class="button-save"
     (click)="save()"
     [isDisabled]="!clientForm.valid"
-    >{{ btnAction }}</button-primary
+    >Salvar</button-primary
   >
 </div>
